@@ -298,26 +298,49 @@
 
 
 
-                                <h2 class="comon-heading m-0"> Stadiums </h2>
+    <div class="row gx-lg-5 mb-4">
+    <div class="col-lg-7 col-xl-8">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="comon-heading m-0">Stadiums</h2>
+        </div>
+    </div>
+</div>
 
-                         <!--grid-->
-   <div class="container my-5">
-    <div class="row">
+
+
+
+         <div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-md-5 gy-lg-0 gx-lg-5 mt-0">
         @foreach($stadiums as $stadium)
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="position-relative">
-                <img src="{{ asset('images/'.$stadium->image_path) }}" alt="{{ $stadium->name }}" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
-                <div class="position-absolute top-0 left-0 right-0 bottom-0 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center text-white">
-                    <div class="text-center">
-                        <h4 class="font-weight-bold">{{ $stadium->name }}</h4>
-                        <p>{{ $stadium->location }}</p>
-                    </div>
+        <div class="col">
+            <div class="comon-blogs1">
+                <figure class="position-relative">
+                    <img src="{{ asset('images/'.$stadium->image_path) }}" alt="{{ $stadium->name }}" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                   
+                </figure>
+                <div class="news-items-del p-3 bg-white shadow-sm">
+                    <h5>{{ $stadium->name }}</h5>
+                    <ul class="list-unstyled d-flex align-items-center my-2">
+                        <li><i class="far fa-futbol me-2"></i>{{ $stadium->capacity ?? 'N/A' }} seats</li>
+                        <li class="ms-3"><i class="far fa-map-marker-alt me-2"></i>{{ $stadium->location }}</li>
+                    </ul>
+
+                    <p class="mt-2">Lorem Ipsum is simply dummy text for the stadium presentation. Update with real description if needed.</p>
+
+                    <a href="#" class="comon-blogs1">
+
+                        View Games
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right-square ms-1" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
 </div>
+
 
 
 
